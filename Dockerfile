@@ -1,5 +1,8 @@
 FROM golang:1.19-alpine as builder
 
+ARG GOPROXY
+ENV GOPROXY=$GOPROXY
+
 RUN apk --update --no-cache add gcc libc-dev
 # DEBUG
 RUN apk add busybox-extras
